@@ -31,3 +31,25 @@ Navigate to the project directory in your terminal.
 Run mvn clean install to build the application.  
 Run java -jar target/lunch-picker-backend.jar to start the server.  
 
+### API Endpoints:  
+
+Get Restaurants (GET /api/restaurants/{sessionId})  
+Lists all restaurants submitted for a session.  
+Add Restaurant (POST /api/restaurants)  
+Submits a new restaurant suggestion.  
+
+Get All Sessions (GET /api/sessions)  
+Lists all active sessions.  
+Create Session (POST /api/sessions)  
+Creates a new session with a username. Body: { "createdBy": "username" }  
+Join Session (POST /api/sessions/{sessionId}/join)  
+Attempts to join a session using its ID.  
+End Session (POST /api/sessions/{sessionId}/end)  
+Ends a session and potentially returns a randomly chosen restaurant (implementation dependent).  
+
+Register (POST /api/register)  
+Creates a new user account.  
+Login (POST /api/login)  
+Authenticates a user and generates a JWT token.  
+
+
