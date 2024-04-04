@@ -37,7 +37,7 @@ public class RestaurantService {
         Session session = sessionService.getSessionById(restaurant.getSessionId());
         if(!ObjectUtils.isEmpty(session) && !session.isEnded()) {
             Restaurant savedRestaurant = restaurantRepository.save(restaurant);
-            log.info("Saved the Restaurant Data...");
+            log.info("Saved the Restaurant Data.");
             webSocketService.sendRestaurantUpdate(restaurantRepository.findBySessionId(restaurant.getSessionId()));
             return savedRestaurant;
         }

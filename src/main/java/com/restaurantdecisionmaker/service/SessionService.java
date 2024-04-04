@@ -5,6 +5,7 @@ import com.restaurantdecisionmaker.model.Restaurant;
 import com.restaurantdecisionmaker.model.Session;
 import com.restaurantdecisionmaker.repository.RestaurantRepository;
 import com.restaurantdecisionmaker.repository.SessionRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Random;
 
 @Service
+@Slf4j
 public class SessionService {
     @Autowired
     private SessionRepository sessionRepository;
@@ -31,8 +33,9 @@ public class SessionService {
     public Session getSessionById(Long sessionId) {
         Session session = sessionRepository.findById(sessionId).orElse(null);
         if (session != null) {
-            return sessionRepository.save(session);
+            return session;
         }
+        log.info("SessionId doesn't exist. SessionId: {}", sessionId);
         throw new SessionNotFoundException("SessionId not found");
     }
 
@@ -41,6 +44,7 @@ public class SessionService {
         if (session != null && !session.isEnded()) {
             return session;
         }
+        log.info("SessionId doesn't exist. SessionId: {}", sessionId);
         throw new SessionNotFoundException("Session doesn't exist");
     }
 
@@ -55,6 +59,7 @@ public class SessionService {
             webSocketService.sendSelectedRestaurantUpdate(res);
             return res;
         }
+        log.info("SessionId doesn't exist. SessionId: {}", sessionId);
         throw new SessionNotFoundException("SessionId not found");
     }
 }
