@@ -25,11 +25,11 @@ Clients will receive the update and dynamically add the new restaurant to their 
 This eliminates the need for manual page refreshes, ensuring everyone sees the latest submissions.  
 
 ### Running the Application  
-Ensure you have Java and Maven installed.  
-Clone or download the project repository.  
-Navigate to the project directory in your terminal.  
+Ensure you have Java and Maven installed.  Java version 17 & above.
+Clone or download the project repository, Run git clone https://github.com/challapalli/restaurant-decision-maker.git
+Navigate to the project directory in your terminal, cd restaurant-decision-maker 
 Run mvn clean install to build the application.  
-Run java -jar target/lunch-picker-backend.jar to start the server.  
+Run java -jar target/restaurant-decision-maker.jar to start the server.  
 
 ### API Endpoints:  
 
