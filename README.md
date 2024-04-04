@@ -25,7 +25,7 @@ Clients will receive the update and dynamically add the new restaurant to their 
 This eliminates the need for manual page refreshes, ensuring everyone sees the latest submissions.  
 
 ### Running the Application  
-Ensure you have Java and Maven installed.  Java version 17 & above.
+Ensure you have Java and Maven installed.  Java version 17 & above.  
 Clone or download the project repository, Run git clone https://github.com/challapalli/restaurant-decision-maker.git  
 Navigate to the project directory in your terminal, cd restaurant-decision-maker  
 Run mvn clean install to build the application.  
